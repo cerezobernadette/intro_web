@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOG IN PAGE</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+   <section class="body">
+   
+     <div class="about">
+       <h2 class="us">ABOUT US:</h2>
+       <h4 class="multi">
+           This project is a multi-section webpage using HTML and CSS that reflects the faith-based values of “Una ang Ginoo” (God First) and “Light of the World.” 
+           The webpage demonstrates ethical responsibility, creativity, and technical proficiency in web design.
+           It shows how technology and faith can collaborate to inspire, inform, and uplift others through meaningful web content.
+           The page also serves as the final examination for Introduction to Computer Science.
+           Overall, the design aims to combine usability, aesthetics, and readability for an engaging user experience.
+       </h4>
+     </div>
+
+    <div class="wrap">
+      <form id="loginForm" action="process_login.php" method="POST">
+        <h1>Sign In</h1>
+        <div class="input-box">
+            <input id="email" type="email" name="email" placeholder="Enter Username" required>
+            <i class='bx bxs-user-circle'></i> 
+        </div>
+
+        <div class="input-box">
+            <input id="password" type="password" name="password" placeholder="Enter Password" required>
+            <i class='bx bxs-lock-keyhole'></i> 
+        </div>
+     
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember Me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn">Log in</button>
+        <p class="error" id="error-msg" style="display:none;">Incorrect email or password.</p>
+
+        <div class="register-link">
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+      </form>
+    </div>
+
+   <script> 
+     document.getElementById("loginForm").addEventListener("submit", function(event) 
+     { 
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const errorMsg = document.getElementById("error-msg");
+        const correctEmail = "cerezobernadeth7@gmail.com";
+        const correctPassword = "dacalos29";
+        
+        if (email === correctEmail && password === correctPassword) 
+        
+        { window.location.href = "home.html"; }
+
+        else { errorMsg.style.display = "block"; } 
+        
+     }
+    ); 
+
+   </script>
+
+</section>
+
+<footer>
+  &copy; 2025 My Laboratory Project | All Rights Reserved
+</footer>
